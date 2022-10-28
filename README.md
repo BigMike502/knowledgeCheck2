@@ -1,5 +1,11 @@
 # Knowledge Check 2 for Software Course 1
 
+##NOTE
+I moved most of the information from below to there own C# classes to make it for efficent and changed it so it would work with what I made.
+
+_________________
+
+
 1. Create a new Repsitory by clicking the green "Use this Template" button and setup a new repository in your account.
 2. Create a new project in Visual Studio
 3. Create a new object and then create another object that inherits from it.  Each object should have at least 1 property.  Example from the pet store: first class is Animal, second class is Cat and it inherits from Animal.
