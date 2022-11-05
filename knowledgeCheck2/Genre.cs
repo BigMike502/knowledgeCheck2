@@ -8,12 +8,16 @@ namespace KnowledgeCheck2
 {
   class Genre : Book
   {
-    public List<string> bookGenre { get; set; } = new List<string>();
 
-    public void BookGenre(string value)
-    {
-      bookGenre.Add(value);
-    }
+    public string bookGenre { get; set; }
+
+
+    //public List<string> bookGenre { get; set; } = new List<string>();
+
+    //public void BookGenre(string value)
+    //{
+    //  bookGenre.Add(value);
+    //}
 
   }
 }

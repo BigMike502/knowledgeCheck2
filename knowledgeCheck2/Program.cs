@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Linq;
 
 namespace KnowledgeCheck2
 {
@@ -8,37 +9,51 @@ namespace KnowledgeCheck2
   {
     static void Main(string[] args)
     {
-      Genre genre = new Genre();
+      
 
       Console.WriteLine("How many books do you have? ");
-      genre.bookTotal = int.Parse(Console.ReadLine());
+      int recordCount = int.Parse(Console.ReadLine());
 
-      for (int i = 0; i < genre.bookTotal; i++)
+      var recordlist = new List<Genre>();
+      for (int i = 0; i < recordCount; i++)
       {
-      
-        Console.WriteLine("Enter in the titles please.");
-        genre.AddTitle(Console.ReadLine());
+
+        Genre genre = new Genre();
+        Console.WriteLine("Enter in the books Title.");
+        genre.bookTitle = Console.ReadLine();
         Console.WriteLine();
-        Console.WriteLine("Please enter in books genre.");
-        genre.BookGenre(Console.ReadLine());
 
-        Console.WriteLine($"{Environment.NewLine}The books name is {genre.bookName[i]} and the genre is {genre.bookGenre[i]}.");
+        Console.WriteLine($"Please enter in {genre.bookTitle} page count.");
+        genre.bookPages = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
+
+        Console.WriteLine($"Please enter in {genre.bookTitle} publishing year.");
+        genre.bookPublish = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"{genre.bookTitle} is currently {genre.currentYear - genre.bookPublish}");
+        Console.WriteLine();
+
+        Console.WriteLine($"{genre.bookTitle}is in what Genre.");
+        genre.bookGenre = Console.ReadLine();
+
+        //Console.WriteLine($"{Environment.NewLine}The books name is {genre.bookName[i]} and the genre is {genre.bookGenre[i]}.");
+
+        recordlist.Add(Genre);
 
       }
 
-      foreach (String item in genre.bookName)
-      {
-        Console.WriteLine("These are all the titles");
-        Console.WriteLine(item);
-      }
+      //foreach (String item in genre.bookName)
+      //{
+      //  Console.WriteLine("These are all the titles");
+      //  Console.WriteLine(item);
+      //}
 
-      Console.WriteLine();
+      //Console.WriteLine();
 
-      foreach (String item in genre.bookGenre)
-      {
-        Console.WriteLine("These are all the Genre's");
-        Console.WriteLine(item);
-      }
+      //foreach (String item in genre.bookGenre)
+      //{
+      //  Console.WriteLine("These are all the Genre's");
+      //  Console.WriteLine(item);
+      //}
     }
   }
 }
