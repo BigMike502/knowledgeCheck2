@@ -12,6 +12,7 @@ namespace KnowledgeCheck2
     public int bookPages { get; set; }
     public int bookPublish { get; set; }
     public int currentYear = Convert.ToInt32(DateTime.Now.Year.ToString());
+    public int bookYearsPublished { get; set; }
 
 
     //public List<string> bookName { get; set; } = new List<string>();

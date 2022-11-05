@@ -19,7 +19,7 @@ namespace KnowledgeCheck2
       {
 
         Genre genre = new Genre();
-        Console.WriteLine("Enter in the books Title.");
+        Console.WriteLine($"{Environment.NewLine}Enter in the books Title.");
         genre.bookTitle = Console.ReadLine();
         Console.WriteLine();
 
@@ -29,31 +29,28 @@ namespace KnowledgeCheck2
 
         Console.WriteLine($"Please enter in {genre.bookTitle} publishing year.");
         genre.bookPublish = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine($"{genre.bookTitle} is currently {genre.currentYear - genre.bookPublish}");
+        genre.bookYearsPublished = genre.currentYear - genre.bookPublish;
+        Console.WriteLine($"{Environment.NewLine}{genre.bookTitle} is currently {genre.bookYearsPublished}");
         Console.WriteLine();
 
-        Console.WriteLine($"{genre.bookTitle}is in what Genre.");
+        Console.WriteLine($"{genre.bookTitle} is in what Genre.");
         genre.bookGenre = Console.ReadLine();
 
-        //Console.WriteLine($"{Environment.NewLine}The books name is {genre.bookName[i]} and the genre is {genre.bookGenre[i]}.");
-
-        recordlist.Add(Genre);
+        recordlist.Add(genre);
 
       }
 
-      //foreach (String item in genre.bookName)
-      //{
-      //  Console.WriteLine("These are all the titles");
-      //  Console.WriteLine(item);
-      //}
+      IEnumerable<Genre> GetAllBooks()
+      {
+        return recordlist;
+      }
 
-      //Console.WriteLine();
+      foreach (var i in GetAllBooks())
+      {
+        Console.WriteLine($"{Environment.NewLine}The books name is {i.bookTitle} its genre is {i.bookGenre}, it has {i.bookPages}.");
+        Console.WriteLine($"{i.bookTitle} was written in {i.bookPublish} it is {i.bookYearsPublished} years old!");
+      }
 
-      //foreach (String item in genre.bookGenre)
-      //{
-      //  Console.WriteLine("These are all the Genre's");
-      //  Console.WriteLine(item);
-      //}
     }
   }
 }
