@@ -16,18 +16,18 @@ namespace KnowledgeCheck2
 
       Console.WriteLine("Lets get some info about your favorite books!\r\nHow many books would you like to enter?");
       totalofBooks = Convert.ToInt32(Console.ReadLine());
-      Console.WriteLine();
+      
 
       for (int total = 0; total != totalofBooks; total++)
       {
-        Console.WriteLine("Enter in the name of the book!");
+        Console.WriteLine($"{Environment.NewLine}Enter in the name of the book!");
         info.AddTitle(Console.ReadLine());
-        Console.WriteLine($"Enter in the page total for {info.Title[total]}.");
-        info.AddPage(Console.ReadLine());
-        Console.WriteLine($"The book {info.Title[total]} has {info.PageNumber[total]} Pages!\r\n");
+        Console.WriteLine($"{Environment.NewLine}Enter in the page total for {info.Title[total]}.");
+        info.AddPage(Convert.ToInt32(Console.ReadLine()));
+        Console.WriteLine($"{Environment.NewLine}The book {info.Title[total]} has {info.PageNumber[total]} Pages!\r\n");
       }
 
-      Console.WriteLine($"There are {info.Title.Count} Titles in the list.\r\nThere are {info.PageNumber.Count} Pages in the List.\r\n");
+      Console.WriteLine($"There are {info.Title.Count} titles that you like!\r\nThere are {info.PageNumber.Sum()} total pages in your favorite books.\r\n");
       
       Console.WriteLine();
 

@@ -10,11 +10,11 @@ namespace KnowledgeCheck2
     public class Totals
     {
       private List<string> title;
-      private List<string> pageNumber;
+      private List<int> pageNumber;
       public Totals()
       {
       title = new List<string>() { };
-      pageNumber = new List<string>() { };
+      pageNumber = new List<int>() { };
       }
 
       public List<string> Title
@@ -22,7 +22,7 @@ namespace KnowledgeCheck2
         get { return title; }
       }
 
-      public List<string> PageNumber
+      public List<int> PageNumber
       {
         get { return pageNumber; }
       }
@@ -32,7 +32,7 @@ namespace KnowledgeCheck2
         title.Add(titles);
       }
   
-      public void AddPage(string number)
+      public void AddPage(int number)
       {
         pageNumber.Add(number);
       }
