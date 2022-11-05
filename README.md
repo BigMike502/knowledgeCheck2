@@ -1,7 +1,9 @@
 # Knowledge Check 2 for Software Course 1
 
-## NOTE
-I moved most of the information from below to there own C# classes to make it for efficent and changed it so it would work with what I made.
+## My Book Log
+This is was I created for the KC2 for Software Course 1.
+
+
 
 _________________
 
