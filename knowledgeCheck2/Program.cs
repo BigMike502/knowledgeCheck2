@@ -13,28 +13,31 @@ namespace KnowledgeCheck2
 
       Console.WriteLine("How many books do you have? ");
       int recordCount = int.Parse(Console.ReadLine());
+      Console.WriteLine($"{Environment.NewLine}Press Enter to continue...");
+      Console.ReadLine();
+      Console.Clear();
 
       var recordlist = new List<Genre>();
       for (int i = 0; i < recordCount; i++)
       {
 
         Genre genre = new Genre();
-        Console.WriteLine($"{Environment.NewLine}Enter in the books Title.");
+        Console.WriteLine($"Enter in the books Title.");
         genre.bookTitle = Console.ReadLine();
-        Console.WriteLine();
 
-        Console.WriteLine($"Please enter in {genre.bookTitle} page count.");
+        Console.WriteLine($"{Environment.NewLine}Please enter in {genre.bookTitle} page count.");
         genre.bookPages = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine();
 
-        Console.WriteLine($"Please enter in {genre.bookTitle} publishing year.");
+        Console.WriteLine($"{Environment.NewLine}{genre.bookTitle} is in what Genre.");
+        genre.bookGenre = Console.ReadLine();
+
+        Console.WriteLine($"{Environment.NewLine}Please enter in {genre.bookTitle} publishing year.");
         genre.bookPublish = Convert.ToInt32(Console.ReadLine());
         genre.bookYearsPublished = genre.currentYear - genre.bookPublish;
         Console.WriteLine($"{Environment.NewLine}{genre.bookTitle} is currently {genre.bookYearsPublished}");
-        Console.WriteLine();
-
-        Console.WriteLine($"{genre.bookTitle} is in what Genre.");
-        genre.bookGenre = Console.ReadLine();
+        Console.WriteLine($"{Environment.NewLine}Press Enter to continue...");
+        Console.ReadLine();
+        Console.Clear();
 
         recordlist.Add(genre);
 
