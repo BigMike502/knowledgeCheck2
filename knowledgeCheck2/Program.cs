@@ -43,12 +43,12 @@ namespace KnowledgeCheck2
 
       }
 
-      IEnumerable<Genre> GetAllBooks()
-      {
-        return recordlist;
-      }
+      //IEnumerable<Genre> GetAllBooks()
+      //{
+      //  return recordlist;
+      //}  This will work, Just need to add the GetAllBooks() into the for each loop in line 51.
 
-      foreach (var i in GetAllBooks())
+      foreach (var i in recordlist)
       {
         Console.WriteLine($"{Environment.NewLine}The books name is {i.bookTitle} its genre is {i.bookGenre}, it has {i.bookPages}.");
         Console.WriteLine($"{i.bookTitle} was written in {i.bookPublish} it is {i.bookYearsPublished} years old!");
